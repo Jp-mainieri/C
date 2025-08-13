@@ -1,0 +1,315 @@
+//ex01 Condicionais
+//Sabendo que A=20, B=0, C=1 e D=10, informe se as expressões são Verdadeiras ou Falsas.
+//(A – B + D) >= (C)
+//(A > (A + D)) || (C > B)
+//((A * D) > (C + A)) && (A > B)
+//(((A + B) / C) >= 0,9) && ((B * D) < 0)
+//((A + C)/D) > 0,3) && (((B –C)<0) ) || ((C+A) > D))
+//(((A + C)/D) > 0,3) && ((B –C)<0) )) || ((C+A) > D)
+
+#include <stdio.h>
+
+int main(){
+    int A,B,C,D;
+    A = 20;
+    B = 0;
+    C = 1;
+    D = 10;
+    if ((A - B + D) >= (C)){
+        printf("True\n");
+    }else{
+        printf("False\n");
+    }
+    if ((A > (A + D)) || (C > B)){
+        printf("True\n");
+    }else{
+        printf("False");
+    }
+    if (((A * D) > (C + A)) && (A > B)){
+        printf("True\n");
+    }else{
+        printf("False\n");
+    }
+    if ((((A + B) / C) >= 0.9) && ((B * D) < 0)){
+        printf("True\n");
+    }else{
+        printf("False\n");
+    }
+    if (((((A + C)/D) > 0.3) && (((B - C)<0) ) || ((C+A) > D))) {
+        printf("True\n");
+    }else{
+        printf("False\n");
+    }
+    if ((((((A + C)/D) > 0.3) && ((B -C)<0) )) || ((C+A) > D)){
+        printf("True\n");
+    }else{
+        printf("False\n");
+    }
+    return 0;
+}
+//ex02 Condicionais
+#include <stdio.h>
+
+int main()
+{
+    int idade;
+    float peso;
+    printf("Digite sua idade: ");
+    scanf("%i",&idade);
+    printf("Digite sua peso: ");
+    scanf("%f",&peso);
+    if ((16 <= idade && idade <= 69) && (peso >= 50))
+    {
+        printf("You can be a blood donator!");
+    }else
+    {
+        printf("You can't be a blood donator");
+    }
+    return 0;
+}
+//ex03 Condicionais
+#include <stdio.h>
+int main()
+{
+    float nota;
+    while (nota >= 0) {
+        printf("Insert your grade: ");
+        scanf("%f",&nota);
+        if (nota < 5)
+        {
+            printf("Insuficcient Grade");
+        }else if (nota >= 5 && nota < 7)
+        {
+            printf("Regular Grade");
+        }else if (nota >= 7 && nota < 9)
+        {
+            printf("Good Grade");
+        }else
+        {
+            printf("Excelent Grade");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+//ex04 Condicionais
+#include  <stdio.h>
+
+int main()
+{
+    int A,B,C;
+    scanf("%d %d %d",&A,&B,&C);
+    //scanf("%d",&A;
+    //scanf("%d",&B);
+    //scanf("%d",&C);
+    if (A + B > C && A + C > B && B + C > A)
+    {
+        printf("Triangulo valido");
+    }else
+    {
+        printf("Triangulo invalido");
+    }
+}
+//ex05 Condicionais
+#include  <stdio.h>
+
+int main()
+{
+    int option;
+    float n1,n2,resultado;
+    printf("Menu ------------\n"
+           "1 - Adicao\n"
+           "2 - Subtracao\n"
+           "3 - Multiplicacao\n"
+           "4 - Divisao\n"
+           ">");
+    scanf("%d",&option);
+    switch(option)
+    {
+    case 1:
+        printf("Insira dois numeros reais:\n");
+        scanf("%f %f",&n1,&n2);
+        resultado = n1 + n2;
+        break;
+    case 2:
+        printf("Insira dois numeros reais:\n");
+        scanf("%f %f",&n1,&n2);
+        resultado = n1 - n2;
+        break;
+    case 3:
+        printf("Insira dois numeros reais:\n");
+        scanf("%f %f",&n1,&n2);
+        resultado = n1 * n2;
+        break;
+    case 4:
+        printf("Insira dois numeros reais:\n");
+        scanf("%f %f",&n1,&n2);
+        resultado = n1 + n2;
+        break;
+    default:
+        printf("Opcao Invalida");
+        break;
+    }
+    printf("Resultado = %.2f",resultado);
+    return 0;
+}
+//ex01 Loops
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+    bool ePrimo = true;
+    int numero;
+    int i = 2;
+    printf("Digite um numero inteiro: ");
+    scanf("%d",&numero);
+
+    if (numero < 2) {
+        ePrimo = true;
+    } else {
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0) {
+                ePrimo = false;
+                break;
+            }
+        }
+    }
+
+    if (ePrimo)
+    {
+        printf("O numero %d eh primo\n",numero);
+    } else
+        {
+        printf("O numero %d nao eh primo\n",numero);
+    }
+    return 0;
+}
+//ex02 Loops
+#include <stdio.h>
+
+int main()
+{
+    int num,count = 0,bignum = 0,smallnum;
+
+    while (num != 0)
+    {
+        scanf("%d",&num);
+        if (num > bignum)
+        {
+            bignum = num;
+        }
+        if (num < smallnum)
+        {
+            smallnum = num;
+        }
+        count++;
+    }
+    printf("A contagem eh %d\n",count);
+    printf("O maior numero eh %d\n",bignum);
+    printf("O menor numero eh %d\n",smallnum);
+
+    return 0;
+}
+//ex03 Loops
+#include <stdio.h>
+
+int main()
+{
+    int num,res = 1;
+
+    do{
+        res = 1;
+        printf("Insert a number: ");
+        scanf("%d",&num);
+        for (int i = 1; i <= num; i++)
+        {
+            res = res * i;
+        }
+        printf("- %d factorial = %d\n",num,res);
+    }while (num >= 0);
+
+    return 0;
+}
+//ex04 Loops
+#include <stdio.h>
+
+int main()
+{
+    int senha = 1234,tentativa;
+    printf("Digite a senha de 4 digitos: ");
+
+    for (int t = 0; t < 3; t++)
+    {
+        scanf("%d",&tentativa);
+        if (tentativa == senha)
+        {
+            printf("Acesso liberado\n");
+            break;
+        }
+        else
+        {
+            printf("Acesso negado\n");
+        }
+        if (t == 2)
+        {
+            printf("Usuario Bloquado!\n");
+        }
+        else
+        {
+            printf("Tente novamente, tentativa %d/3\n",t+1);
+        }
+    }
+    return 0;
+}
+//ex05 Loops
+#include <stdio.h>
+#include <stdbool.h>
+int main()
+{
+    int n1,n2,n3,n4,n5,temp;
+    printf("Enter 5 numbers:\n");
+    scanf("%d)",&n1);
+    scanf("%d",&n2);
+    scanf("%d",&n3);
+    scanf("%d",&n4);
+    scanf("%d",&n5);
+    bool mustStop = false;
+    while (mustStop == false)
+    {
+        printf("%d,%d,%d,%d,%d\n",n1,n2,n3,n4,n5);
+        mustStop = true;
+        if (n1 > n2)
+        {
+
+            temp = n2;
+            n2 = n1;
+            n1 = temp;
+            mustStop = false;
+        }
+        if (n2 > n3)
+        {
+            temp = n3;
+            n3 = n2;
+            n2 = temp;
+            mustStop = false;
+        }
+        if (n3 > n4)
+        {
+            temp = n4;
+            n4 = n3;
+            n3 = temp;
+            mustStop = false;
+        }
+        if (n4 > n5)
+        {
+            temp = n5;
+            n5 = n4;
+            n4 = temp;
+            mustStop = false;
+        }
+    }
+    printf("Os numeros ordenados sao:\n");
+    printf("%d,%d,%d,%d,%d\n",n1,n2,n3,n4,n5);
+    return 0;
+}
