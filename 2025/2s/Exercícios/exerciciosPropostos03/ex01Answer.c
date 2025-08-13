@@ -10,7 +10,7 @@ int main()
     scanf("%d",&numero);
 
     if (numero < 2) {
-        ePrimo = false;
+        ePrimo = true;
     } else {
         for (int i = 2; i < numero; i++) {
             if (numero % i == 0) {
