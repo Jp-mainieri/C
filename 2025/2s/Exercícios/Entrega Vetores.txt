@@ -1,0 +1,304 @@
+//ex01.c
+
+#include <stdio.h>
+int main()
+{
+    int n;
+    do{
+        printf("Digite quantas multiplicacoes voce quer fazer: ");
+        scanf("%d",&n);
+        if (n < 1 || n > 20)
+        {
+            printf("Numero invalido. Deve ser entre 1 e 20.\n");
+        }
+    }while (n < 1 || n > 20);
+    int x[n],y[n],z[n];
+    for (int i = 0; i < n;i++)
+    {
+        printf("\nDigite o primeiro numero: ");
+        scanf("%d",&x[i]);
+        printf("\nDigite o segundo numero: ");
+        scanf("%d",&y[i]);
+        z[i] = x[i] * x[i];
+    }
+    printf("Vetores:\n");
+    printf("X = ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",x[i]);
+    }
+    printf("\n Y = ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",y[i]);
+    }
+    printf("\n Z = ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",z[i]);
+    }
+    return 0;
+}
+
+//ex02.c
+
+#include <stdio.h>
+
+int main(){
+    int n,maior = -1000000,menor = 1000000;
+    do
+    {
+        printf("Digite quantos valores voce quer inserir: ");
+        scanf("%d", &n);
+        if (n < 1 || n > 20)
+        {
+            printf("Numero invalido. Deve ser entre 1 e 20.\n");
+        }
+    }while (n < 1 || n > 20);
+    int x[n];
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+        if (x[i] > maior)
+        {
+            maior = x[i];
+        }
+        if (x[i] < menor)
+        {
+            menor = x[i];
+        }
+    }
+    printf("X = ");;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", x[i]);
+    }
+    printf("\nMaior = %d", maior);
+    printf("\nMenor = %d\n", menor);
+
+    return 0;
+}
+
+// ex03.c
+
+#include <stdio.h>
+
+int main()
+{
+    int n,Posmaior = 0,Posmenor = 0,menor,maior;
+    do
+    {
+        printf("Digite quantos valores voce quer inserir: ");
+        scanf("%d", &n);
+        if (n < 1 || n > 20)
+        {
+            printf("Numero invalido. Deve ser entre 1 e 20.\n");
+        }
+    }while (n < 1 || n > 20);
+    int x[n];
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+        if (x[i] > maior)
+        {
+            Posmaior = i;
+        }
+        if (x[i] < menor)
+        {
+            Posmenor = i;
+        }
+    }
+    printf("X = ");;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", x[i]);
+    }
+    printf("\nPosição do maior numero = %d", Posmaior++);
+    printf("\nnPosição do menor numero = %d\n", Posmenor++);
+
+    return 0;
+}
+
+//ex04.c
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    do
+    {
+        printf("Digite quantos valores voce quer inserir: ");
+        scanf("%d", &n);
+        if (n < 1 || n > 20)
+        {
+            printf("Numero invalido. Deve ser entre 1 e 20.\n");
+        }
+    }while (n < 1 || n > 20);
+    int x[n];
+    int y[n];
+    
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+    }    
+    for (int i = 0; i < n; i++) {
+        y[n-i-1] = x[i];
+    }
+    printf("X\tY\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d\t%d\n",x[i],y[i]);
+    }
+
+    return 0;
+}
+
+//ex05.c
+
+#include <stdio.h>
+
+int main()
+{
+    int x[20];
+    int qPar,qImpar,qMultfive;
+    
+    for (int i = 0; i < n; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+        if (x[i] % 2 == 0) {
+            qPar ++;
+        }else {
+            qImpar++;
+        }
+        if (x[i] % 5 == 0) {
+            qMultfive++;
+        }
+    }
+    printf("Quantidade de N Pares = %d",qPar);
+    printf("Quantidade de N Impares = %d",qImpar);
+    printf("Quantidade de N Multiplos de 5 = %d",qMultfive);
+
+    return 0;
+}
+
+//ex06.c
+
+#include <stdio.h>
+
+int main()
+{
+    int qMenorMedia = 0;
+    float media,x[20];
+    
+    for (int i = 0; i < 20; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%f", &x[i]);
+        media += x[i];
+    }
+    media /= 20;
+    for (int i = 0; i <20; i++){
+        if (x[i] < media) {
+            qMenorMedia++;
+        }
+    }
+    printf("Media = %f",media);
+    printf("Quantidade de N menores que a média = %d",qMenorMedia);
+
+    return 0;
+}
+
+//ex07.c
+
+#include <stdio.h>
+
+int main()
+{
+    int aux;
+    int x[5];
+    
+    for (int i = 0; i < 5; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+    }
+    for (int i = 0; i < 5 - 1; i++){
+        for (int j = 0; j < 5 - 1; j++){
+            if (x[j] > x[j+1]) {
+                aux = x[j];
+                x[j] = x[j+1];
+                x[j+1] = aux;
+            }
+        }
+    }
+    printf("X\n");
+    for (int i = 0; i < 5; i++){
+        printf("%d\n",x[i]);
+    }
+    return 0;
+}
+
+//ex08.c
+
+#include <stdio.h>
+
+int main()
+{
+    int aux;
+    int x[5];
+    
+    for (int i = 0; i < 5; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &x[i]);
+    }
+    for (int i = 0; i < 5 - 1; i++){
+        for (int j = 0; j < 5 - 1; j++){
+            if (x[j] < x[j+1]) {
+                aux = x[j];
+                x[j] = x[j+1];
+                x[j+1] = aux;
+            }
+        }
+    }
+    printf("X\n");
+    for (int i = 0; i < 5; i++){
+        printf("%d\n",x[i]);
+    }
+    return 0;
+}
+
+//ex09.c
+
+#include <stdio.h>
+
+int main()
+{
+    int aux = 0;
+    int x[10];
+    int cont = 0;
+    
+    while (aux >= 0) {
+        printf("Digite o valor %d: ", cont+1);
+        scanf("%d", &aux);
+        if (aux < 0){
+            break;
+        }
+
+        x[cont] = aux;
+        cont++;
+        
+        if (cont == 10){
+            printf("Você ja digitou o limite de numeros\n");
+            break;
+        }
+    }
+    
+    if (cont < 10) {
+        printf("Você digitou uma quantidade menor do que o limite de numeros\n");
+    }
+    
+    printf("X\n");
+    for (int i = 0; i < cont; i++){
+        printf("%d\n",x[i]);
+    }
+    return 0;
+}
+
+//ex10.c
+
