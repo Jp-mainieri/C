@@ -4,8 +4,8 @@
 //(A > (A + D)) || (C > B)
 //((A * D) > (C + A)) && (A > B)
 //(((A + B) / C) >= 0,9) && ((B * D) < 0)
-//((A + C)/D) > 0,3) && (((B –C)<0) ) || ((C+A) > D))
-//(((A + C)/D) > 0,3) && ((B –C)<0) )) || ((C+A) > D)
+//((A + C)/D) > 0,3 && (((B –C)<0)) || ((C+A) > D)
+//(((A + C)/D) > 0,3) && ((B –C)<0) || ((C+A) > D)
 
 #include <stdio.h>
 
@@ -99,7 +99,7 @@ int main()
 {
     int A,B,C;
     scanf("%d %d %d",&A,&B,&C);
-    //scanf("%d",&A;
+    //scanf("%d",&A);
     //scanf("%d",&B);
     //scanf("%d",&C);
     if (A + B > C && A + C > B && B + C > A)
@@ -269,7 +269,7 @@ int main()
 {
     int n1,n2,n3,n4,n5,temp;
     printf("Enter 5 numbers:\n");
-    scanf("%d)",&n1);
+    scanf("%d",&n1);
     scanf("%d",&n2);
     scanf("%d",&n3);
     scanf("%d",&n4);
