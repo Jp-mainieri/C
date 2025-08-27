@@ -1,0 +1,110 @@
+//ex01.c Feito no caderno
+
+// ex02.c
+
+#include <stdio.h>
+
+int main()
+{
+    int pmaiori = 0,pmaiorj = 0;
+    int matriz[5][5];
+    for (int i = 0; i < 5;i++){
+        for (int j = 0; j < 5; j++){
+            printf("Digite um número: ");
+            scanf("%d",&matriz[i][j]);
+            if (matriz[i][j] > matriz[pmaiori][pmaiorj]){
+                pmaiori = i;
+                pmaiorj = j;
+            }
+        }
+    }
+    printf("Matriz: ");
+        for (int i = 0; i < 5;i++){
+            for (int j = 0; j < 5; j++){
+                printf("%d\t",matriz[i][j]);
+                
+            }
+            printf("\n");
+        }
+    printf("O maior numero inserido foi: %d e está na coluna %d e na linha %d",matriz[pmaiori][pmaiorj],pmaiori+1,pmaiorj+1);
+
+    return 0;
+}
+
+//ex03.c
+
+#include <stdio.h>
+
+int main()
+{
+    int matriz[5][3];
+    int matrizTransposta[3][5];
+    for (int i = 0; i < 5;i++){
+        for (int j = 0; j < 3; j++){
+            printf("Digite um número: ");
+            scanf("%d",&matriz[i][j]);
+            matrizTransposta[j][i] = matriz[i][j];
+        }
+    }
+    
+
+    printf("Matriz:\n");
+        for (int i = 0; i < 5;i++){
+            for (int j = 0; j < 3; j++){
+                printf("%d\t",matriz[i][j]);
+                
+            }
+            printf("\n");
+        }
+        printf("Matriz Transposta:\n");
+        for (int i = 0; i < 3;i++){
+            for (int j = 0; j < 5; j++){
+                printf("%d\t",matrizTransposta[i][j]);
+                
+            }
+            printf("\n");
+        }
+    return 0;
+}
+
+//ex04.c
+
+#include <stdio.h>
+
+int main()
+{
+    float maiordp,somal4,menorc5;
+    float matriz[10][10];
+    for (int i = 0; i < 10;i++){
+        for (int j = 0; j < 10; j++){
+            printf("Digite um número: ");
+            scanf("%f",&matriz[i][j]);
+            if (matriz[i][j] > maiordp && i == j){
+                maiordp = matriz[i][j];
+            }
+            if (i == 3){
+                somal4 += matriz[i][j];
+            }
+            if (menorc5 < matriz[i][j] && j == 4) {
+                menorc5 = matriz[i][j];
+            } 
+        }
+    }
+    
+
+    printf("Matriz:\n");
+        for (int i = 0; i < 10;i++){
+            for (int j = 0; j < 10; j++){
+                printf("%f\t",matriz[i][j]);
+                
+            }
+            printf("\n");
+        }
+    printf("O maior numero da diagonal principal é: %f\n",maiordp);
+    printf("A soma da linha 4 é: %f\n",somal4);
+    printf("O menor numero da coluna 5 é: %f\n",menorc5);
+    return 0;
+}
+
+//ex05.c
+
