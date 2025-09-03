@@ -1,0 +1,110 @@
+//ex01.c
+
+
+#include <stdio.h>
+
+int main()
+{
+    char strVerificar[20], caractere;
+    int count = 0;
+    
+    printf("Que caractere voce quer contar?");
+    scanf("%c",&caractere);
+    getchar();
+    
+    printf("\nDigite a string que voce quer verificar:");
+    scanf("%[^\n]",strVerificar);
+    
+    for (int i = 0; i < sizeof(strVerificar); i++){
+        if (strVerificar[i] == caractere){
+            count++;
+        }
+    }
+    printf("Na string: %s. Aparece o caractere: %c, %d vezes",strVerificar,caractere,count);
+    
+    return 0;
+}
+
+//ex02.c
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char strOriginal[10], strInvertida[10];
+    int len;
+
+    printf("\nDigite a string que voce quer inverter:");
+    scanf("%[^\n]",strOriginal);
+    
+    len = strlen(strOriginal);
+    
+    for (int i = len -1; i >= 0; i--){
+        strInvertida[i] = strOriginal[len -1 -i];
+    }
+    strInvertida[len] = '\0';
+    printf("String Original: %s\nString Invertida: %s",strOriginal,strInvertida);
+    
+    return 0;
+}
+
+//ex03.c
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char strOriginal[10], strInvertida[10];
+    int len;
+
+    printf("\nDigite a string que voce quer inverter:");
+    scanf("%[^\n]",strOriginal);
+    
+    len = strlen(strOriginal);
+    
+    for (int i = len -1; i >= 0; i--){
+        strInvertida[i] = strOriginal[len -1 -i];
+    }
+    strInvertida[len] = '\0';
+    if (strcmp(strOriginal,strInvertida)) {
+        printf("Nao eh um palindromo\n");
+    }else{
+                printf("eh um palindromo\n");
+    }
+    printf("String Original: %s\nString Invertida: %s",strOriginal,strInvertida);
+    
+    return 0;
+}
+
+//ex04.c
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char nome[10], sobrenome[10], nomeCompleto[20];
+	int len;
+
+	printf("\nDigite o seu nome: ");
+	scanf(" %[^\n]",nome);
+	printf("\nDigite o seu sobrenome: ");
+	scanf(" %[^\n]",sobrenome);
+
+
+    strcpy(nomeCompleto, nome);
+    strcat(nomeCompleto, " ");
+    strcat(nomeCompleto, sobrenome);
+    
+	len = strlen(nomeCompleto);
+	printf("Nome completo: %s\n",nomeCompleto);
+	printf("O tamanho do seu nome eh: %d\n",len);
+	printf("A primeira letra do seu nome eh: %c, A ultima letra eh: %c\n",nome[0],nomeCompleto[len-1]);
+
+	return 0;
+}
+
+//ex05.c
+
