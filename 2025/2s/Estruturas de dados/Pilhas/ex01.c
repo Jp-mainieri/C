@@ -23,7 +23,7 @@ Node* create_node(int value)
 Stack* push(Stack* s, int value)
 {
     Node* new_node = create_node(value);
-    new_node-next = s->top;
+    new_node->next = s->top;
     s->top = new_node;
     return s;
 }

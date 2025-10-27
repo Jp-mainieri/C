@@ -1,37 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct
-{
-    char nome[100];
-    long cpf;
-    long contatoCelular;
-}Cliente;
-
 typedef struct Node
 {
-    Cliente cliente;
-    struct Node* next;
+    int value;
+    Node* next;
 }Node;
 
-Node* create_node(Cliente c)
+Node* create_node(int value)
 {
     Node* new_node = (Node*) malloc(sizeof(Node));
-    new_node->cliente = c;
+    new_node->value = value;
     new_node->next = NULL;
     return new_node;
 }
 
-Node* insert_front(Node* head, Cliente c)
+Node* insert_front(Node* head, int value)
 {
-    Node* new_node = create_node(c);
+    Node* new_node = create_node(value);
     new_node->next = head;
     return new_node;
 }
 
-Node* insert_back(Node* head, Cliente c)
+Node* insert_back(Node* head, int value)
 {
-    Node* new_node = create_node(c);
+    Node* new_node = create_node(value);
     if (head == NULL) return new_node;
 
     Node* current = head;
@@ -40,19 +33,18 @@ Node* insert_back(Node* head, Cliente c)
     return head;
 }
 
-Node* insert_at(Node* head, Cliente c, int pos)
+Node* insert_at(Node* head, int value, int pos)
 {
-    if (pos <= 0 || head == NULL) return insert_front(head, c);
+    if (pos <= 0 || head == NULL) return insert_front(head,value);
 
     Node* current = head;
     int index = 0;
-    while (current->next != NULL && index != pos - 1)
+    while (current->next != NULL && index < pos - 1)
     {
         current = current->next;
         index++;
     }
-
-    Node* new_node = create_node(c);
+    Node* new_node = create_node(value);
     new_node->next = current->next;
     current->next = new_node;
     return head;
@@ -103,4 +95,41 @@ Node* remove_at(Node* head, int pos)
     current->next = temp->next;
     free(temp);
     return head;
+}
+
+Node* search(Node* head, int value)
+{
+    Node* current = head;
+    while (current != NULL)
+    {
+        if (current->value == value)
+        {
+            return current;
+        }
+        current = current->next;
+    }
+    return NULL;
+}
+
+void free_list(Node* head)
+{
+    Node* current = head;
+    while (current != NULL)
+    {
+        Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
+}
+
+void print_list(Node* head)
+{
+    Node* current = head;
+    printf("Lista: ");
+    while (current != NULL)
+    {
+        printf("%d -> ", current->value);
+        current = current->next;
+    }
+    printf("NULL\n");
 }
